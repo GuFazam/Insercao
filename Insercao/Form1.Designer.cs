@@ -28,6 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            "0",
+            "Carregador",
+            "1",
+            "55,00"}, -1);
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            "1",
+            "Controle de Xbox Series S",
+            "1",
+            "499,99"}, -1);
             this.listView = new System.Windows.Forms.ListView();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.textBoxProduto = new System.Windows.Forms.TextBox();
@@ -48,13 +58,19 @@
             // 
             // listView
             // 
+            this.listView.BackColor = System.Drawing.Color.FloralWhite;
             this.listView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.col_ID,
             this.col_Produto,
             this.col_Quantidade,
             this.col_Preco});
-            this.listView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView.FullRowSelect = true;
+            this.listView.GridLines = true;
             this.listView.HideSelection = false;
+            this.listView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
+            listViewItem1,
+            listViewItem2});
             this.listView.Location = new System.Drawing.Point(86, 50);
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(378, 171);
@@ -75,13 +91,13 @@
             this.textBoxProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxProduto.Location = new System.Drawing.Point(152, 262);
             this.textBoxProduto.Name = "textBoxProduto";
-            this.textBoxProduto.Size = new System.Drawing.Size(100, 20);
+            this.textBoxProduto.Size = new System.Drawing.Size(112, 20);
             this.textBoxProduto.TabIndex = 2;
             // 
             // textBoxQuantidade
             // 
             this.textBoxQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxQuantidade.Location = new System.Drawing.Point(258, 262);
+            this.textBoxQuantidade.Location = new System.Drawing.Point(270, 262);
             this.textBoxQuantidade.Name = "textBoxQuantidade";
             this.textBoxQuantidade.Size = new System.Drawing.Size(100, 20);
             this.textBoxQuantidade.TabIndex = 3;
@@ -89,9 +105,9 @@
             // textBoxPreco
             // 
             this.textBoxPreco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPreco.Location = new System.Drawing.Point(364, 262);
+            this.textBoxPreco.Location = new System.Drawing.Point(376, 262);
             this.textBoxPreco.Name = "textBoxPreco";
-            this.textBoxPreco.Size = new System.Drawing.Size(100, 20);
+            this.textBoxPreco.Size = new System.Drawing.Size(88, 20);
             this.textBoxPreco.TabIndex = 4;
             // 
             // btnAdicionar
@@ -99,19 +115,20 @@
             this.btnAdicionar.BackColor = System.Drawing.Color.LightGreen;
             this.btnAdicionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionar.Location = new System.Drawing.Point(86, 337);
+            this.btnAdicionar.Location = new System.Drawing.Point(86, 320);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionar.TabIndex = 5;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = false;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // btnRemover
             // 
             this.btnRemover.BackColor = System.Drawing.Color.LightCoral;
             this.btnRemover.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRemover.Location = new System.Drawing.Point(234, 337);
+            this.btnRemover.Location = new System.Drawing.Point(239, 320);
             this.btnRemover.Name = "btnRemover";
             this.btnRemover.Size = new System.Drawing.Size(75, 23);
             this.btnRemover.TabIndex = 6;
@@ -123,7 +140,7 @@
             this.btnObter.BackColor = System.Drawing.Color.SkyBlue;
             this.btnObter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnObter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnObter.Location = new System.Drawing.Point(389, 337);
+            this.btnObter.Location = new System.Drawing.Point(389, 320);
             this.btnObter.Name = "btnObter";
             this.btnObter.Size = new System.Drawing.Size(75, 23);
             this.btnObter.TabIndex = 7;
@@ -154,7 +171,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(254, 239);
+            this.label3.Location = new System.Drawing.Point(266, 239);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(102, 20);
             this.label3.TabIndex = 10;
@@ -164,7 +181,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(360, 239);
+            this.label4.Location = new System.Drawing.Point(372, 239);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 11;
@@ -178,20 +195,17 @@
             // col_Produto
             // 
             this.col_Produto.Text = "Produto";
-            this.col_Produto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.col_Produto.Width = 110;
+            this.col_Produto.Width = 155;
             // 
             // col_Quantidade
             // 
             this.col_Quantidade.Text = "Quantidade";
-            this.col_Quantidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.col_Quantidade.Width = 110;
+            this.col_Quantidade.Width = 90;
             // 
             // col_Preco
             // 
             this.col_Preco.Text = "Preço";
-            this.col_Preco.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.col_Preco.Width = 110;
+            this.col_Preco.Width = 85;
             // 
             // Form1
             // 
