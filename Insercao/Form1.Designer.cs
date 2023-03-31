@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem5 = new System.Windows.Forms.ListViewItem(new string[] {
             "0",
             "Carregador",
             "1",
             "55,00"}, -1);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem6 = new System.Windows.Forms.ListViewItem(new string[] {
             "1",
             "Controle de Xbox Series S",
             "1",
@@ -69,8 +69,8 @@
             this.listView.GridLines = true;
             this.listView.HideSelection = false;
             this.listView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem5,
+            listViewItem6});
             this.listView.Location = new System.Drawing.Point(86, 50);
             this.listView.Name = "listView";
             this.listView.Size = new System.Drawing.Size(378, 171);
@@ -147,6 +147,7 @@
             this.btnObter.TabIndex = 7;
             this.btnObter.Text = "Obter";
             this.btnObter.UseVisualStyleBackColor = false;
+            this.btnObter.Click += new System.EventHandler(this.btnObter_Click);
             // 
             // label1
             // 

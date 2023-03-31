@@ -58,7 +58,7 @@ namespace Insercao
             produtos[2] = textBoxQuantidade.Text;
             produtos[3] = textBoxPreco.Text;
 
-            ListViewItem L = new ListViewItem(produtos); // é uma varial não motiovo para ser a letra L poderia ser qualquer outra letra ou nome
+            ListViewItem L = new ListViewItem(produtos); // a letra L é uma varial ou seja não à motiovo para ser a letra L poderia ser qualquer outra letra ou nome
             listView.Items.Add(L);
             limpar(); // está linha está chamando a função limpar para limpar os textBox após clicar no botão adicionar
         }
@@ -66,6 +66,14 @@ namespace Insercao
         private void btnRemover_Click(object sender, EventArgs e)
         {
             listView.Items.RemoveAt(listView.SelectedIndices[0]); // essa linha revome apenas a linha selecionada
+        }
+
+        private void btnObter_Click(object sender, EventArgs e)
+        {
+            textBoxID.Text = listView.SelectedItems[0].SubItems[0].Text;
+            textBoxProduto.Text = listView.SelectedItems[0].SubItems[0].Text;
+            textBoxQuantidade.Text = listView.SelectedItems[0].SubItems[0].Text;
+            textBoxPreco.Text = listView.SelectedItems[0].SubItems[0].Text;
         }
     }
 }
