@@ -27,7 +27,7 @@ namespace Insercao
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (textBoxID.Text == "")
+            if (textBoxID.Text == "") // lembre-se a validação precisa vir primero senão o código não funciona
             {
                 MessageBox.Show("O campo ID não pode ser vazio, por favor preencha o campo ID");
                 textBoxID.Focus();
@@ -61,8 +61,11 @@ namespace Insercao
             ListViewItem L = new ListViewItem(produtos); // é uma varial não motiovo para ser a letra L poderia ser qualquer outra letra ou nome
             listView.Items.Add(L);
             limpar(); // está linha está chamando a função limpar para limpar os textBox após clicar no botão adicionar
+        }
 
-            
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            listView.Items.RemoveAt(listView.SelectedIndices[0]); // essa linha revome apenas a linha selecionada
         }
     }
 }
